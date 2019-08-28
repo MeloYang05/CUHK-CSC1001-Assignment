@@ -1,0 +1,60 @@
+There are 2 steps, the output of the first step is like this:
+[2, 6, 1, 7, 5, 3, 0, 4]
+There are 8 numbers, which indicates 8 lines and the position of the Q in each lines. The corresponding graphics is:
+| | |Q| | | | | |
+| | | | | | |Q| |
+| |Q| | | | | | |
+| | | | | | | |Q|
+| | | | | |Q| | |
+| | | |Q| | | | |
+|Q| | | | | | | |
+| | | | |Q| | | |
+Its is the second step.
+For the first step, we need def two functions, the first is confict(state, position), the second is queens(number, state=())
+state is the tuple which shows the temporary situation of the prabably output of the firststep.
+def queens(number, state=()):
+    if number-1 == len(state):  ##(This if, is to add the last prabably number,for example, add '4' to [2, 6, 1, 7, 5, 3, 0]£©
+        for position in range(number):##£¨pick a number in order£©
+            if not confict(state, position):##(not conflict means that the position meet the requirement)
+                yield (position,) ##(yield is a generator, it works some close to return, but it will remember the position, the next interation will began in the next position) 
+    else:
+        for position in range(number):##(It is not the last position, so we need use for loop twice)
+            if not confict(state, position):##(the same)
+                for result in queens(number, state+(position,)):##(before the step is executed, there are many probabaly temporary short result built by generator and stored in state(), so we need to add the new propabaly right position into it)
+                    yield (position,) + result##(add the new position in to the original result)
+
+def confict(state, position):
+    nextX = len(state)##(len(state) indicates the next x position)
+    if position in state: ##(if the new position is in the original state, it must can't be correct, because it shows that there is a Q which is in the same row)
+        return True
+    for i in range(nextX):
+        if nextX-position == i-state[i]: ##(there is a Q in the same ¡®/¡¯ line)
+            return True
+        if nextX+position == i+state[i]: ##(there is a Q in the same ¡®\¡¯ line)
+            return True
+## I will explain it with a picture(q6.jpg)
+for every ¡®/¡¯ line, the sum of the abscissa and ordinate is the same.
+for every ¡®\¡¯ line ,the difference of the abscissa and ordinate is the same.
+
+i=list(queens(8))
+i=random.sample(i,1)
+j=list(i[0])
+print(j)
+##After the first step, we put the result of the queen function into a list, then use ramdom function to pick one of the prabably result.
+
+for k in j:
+    count=0
+    while count<k:
+        print('| ',end='')
+        count=count+1
+    while count==k:
+        print('|Q',end='')
+        count=count+1
+    while count>k and count<8:
+        print('| ',end='')
+        count=count+1
+    while count==8:
+        print('|',end='')
+        count=count+1
+        print()
+##At last, we use for and while loop to build the format., In everyloop, we build one line, by using count as the counter to make sure that Q will be placed in the right place.

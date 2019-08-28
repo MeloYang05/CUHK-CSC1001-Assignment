@@ -1,0 +1,3 @@
+Firsly£¬use input function to get the integer as a string.
+Secondly use for and in loop, use pint function to output each number of the integer one by one.
+Our TA told us that for the reverse function of a string, there's no need to reverse the orders, just follow the example.

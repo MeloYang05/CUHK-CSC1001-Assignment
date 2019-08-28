@@ -1,0 +1,1 @@
+Change the 2 argument's in to list, then use .sort() to sort them. After the sort, if list1 = list 2, then the argument is an anagram, else it is not.

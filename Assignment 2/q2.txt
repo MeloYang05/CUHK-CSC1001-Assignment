@@ -1,0 +1,10 @@
+Firstly, def the function: check_prime to determin whether a number is a prime number. The details is shown in the last assignment.
+Then use for range method, the upper should be a very large number, at this time,we choose 10000000. Then we change
+every elements in the list into strings, and use[::-1] to change get its reversal. If the original and the reversal
+both meet the requirement, We will append this number into the primelist.
+For the number in the primelist, we output it using such ways tocount=0
+for a in prime_list:
+    print(a, end=' ')
+    count=count+1
+    if count %10==0:
+        print() ensure that it will change the line every 10 items.

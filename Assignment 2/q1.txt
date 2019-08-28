@@ -1,0 +1,3 @@
+Firtly, make lastGuess=n
+Then build a infinity loop that nextGuess=(lastGuess+n/lastGuess)/2; lastGuess=nextGuess
+Only when abs(nextGuess-lastGuess)<=0.000, the loop will stop and return the result, nextGuess

@@ -1,0 +1,8 @@
+Firtly, build a dict by for loop from 1 to 100 and put every keys a value:closed.
+Then use while loop: while n<100, because there's 100 childs to change the state of the locker.
+the change the locker, we should use such code to determin the correct location: if i%n==0:
+After finding the correct location, if the values in the dictionanry is close, we change it to open, elif it is open, we change it to close.
+Lastly, we use the following codes to output the result.
+for key,value in numberdict.items():
+    if value=='open':
+        print('L',key,' ',value,sep='')

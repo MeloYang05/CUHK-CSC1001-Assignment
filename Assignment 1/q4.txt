@@ -1,0 +1,7 @@
+Firsly, use input and int function to let user input the number and transform it into integer.
+Secondly, use print function and '\t' to get the correct format of the first line, such as: m        m+1      m**(m+1)
+Thirdly, make M=1
+Fourthly, use while loop, while M<=N (the interger that the user puts in), our put a line.
+During this process, I define 3 variable to represent the result of the corresponding calculation.
+For the output, my print function is written as it to ensure the sheet is in order: print('\t',a,'\t',b,'\t',c,sep='')
+after the process, make M=M+1 to meet the requirement of the while loop.

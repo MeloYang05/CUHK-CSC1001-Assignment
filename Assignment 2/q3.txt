@@ -1,0 +1,39 @@
+def getdigit(number):
+    sum=0
+    for i in str(number):
+        sum+=int(i)
+    return sum
+It is using for loop to sum up all the digits belonging to the number we input
+
+def sumofevendoublespace(number):
+    step1_sum=0
+    number=str(number)
+    number_list1=list()
+    for i in range(len(number)-1,-1,-1):
+        if i%2==0:
+            number_list1.append(number[i])
+    for i in number_list1:
+        m=getdigit(int(i)*2)
+        step1_sum+=m
+    return step1_sum
+the key is to using reversal range function to get the number we want, then put it into the number list. Then we use getdigit funtion and sum up one by one to get the result we want.
+
+def sumofoddplace(number):
+    step2_sum=0
+    number=str(number)
+    number_list2=list()
+    for i in range(len(number)-1,-1,-1):
+        if i%2==1:
+            number_list2.append(number[i])
+    for i in number_list2:
+        step2_sum+=int(i)
+    return step2_sum
+It's similar to the previous step. At this time, we change the position we want, and there's no need to use getdigit function. We just sum up the number we get.
+
+def isvalid(number):
+    sum=sumofevendoublespace(number)+sumofoddplace(number)
+    if sum%10==0:
+        return True
+    else:
+        return False
+Sum up sumofevendoublespace(number)+sumofoddplace(number), and find whether it could be divided by 10. If, return true. else, return false.

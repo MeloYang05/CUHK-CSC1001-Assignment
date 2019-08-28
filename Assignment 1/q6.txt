@@ -1,0 +1,6 @@
+Firtly, use infinity while loop to judge whether the input is correct. the method is :if a.replace('.','',1).isdigit() and b.replace('.','',1).isdigit() and n.isdigit() and c in ('sin','cos','tan'):
+if true, do the following part. if not, print out:please check your input and try again, note that a and b must be number, n must be integer, and the function can only be written as sin, cos and tan
+then use eval function to change the input into the number that we want.
+Then import sin, cos, and tan for calculation:
+Then use while loop to do the integration:
+At last, partly put out the result.

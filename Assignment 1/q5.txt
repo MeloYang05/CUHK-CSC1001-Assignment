@@ -1,0 +1,11 @@
+To write this program, we need follow 3 steps: 
+1.judge whether the input is a integer:
+we build a infinite loop firstly, use the .isdigit function to judge, if it returns true, we can do the next parts and use 'break' to quit the loop.
+else, print('please try to enter an integer again:') and by the while loop, we come back to the first step.
+2. find the prime number
+in this parts I use the method Ta thaught me in tutorial of csc1002. Firstly I build an empty list, then use for loop to judge whether the number from 2 to N have the number which can be divided equally.
+（还是用中文吧，就是先用一个for循环，针对2到N之间所有的数，然后再用一个for循环，找到2到之前那个for循环中举出的那个数，然后判断第一个for循环中取到的数，在第二个for循环中取到的数中，是否存在数将其整除。如果是，可提前结束循环。若不是，则将其加入之前那个空列表中）
+3.out put the result:
+firtly, build a counter. then use for loop to print out the result. In this process, I use end=' ' to escape from changing the line.
+when count%8=0, there are 8 digits in the line, we use print() to change the line.
+That's all.

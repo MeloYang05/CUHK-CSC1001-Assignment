@@ -1,0 +1,4 @@
+Firsly,let's make n the smallest nutural number:0
+Secondly, use input and int function to get the number and transform it into integer.
+Thirdly, use while loop: while n^2<a, make n=n+1, util n^2>a, then we get the n that we want.
+Finally, use print function to output the result n.

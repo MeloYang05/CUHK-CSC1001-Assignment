@@ -1,0 +1,3 @@
+Firstly,use input function to let users input the neccessary information and use eval function to turn it into correct format.
+Then use math function following the formula to calculate for the result.
+Finally, use print function to output the result.
